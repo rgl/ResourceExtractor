@@ -9,6 +9,6 @@
     <Copyright>Copyright © ruilopes.com 2018</Copyright>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Vestris.ResourceLib" Version="1.6.422" />
+    <PackageReference Include="Vestris.ResourceLib" Version="2.1.0" />
   </ItemGroup>
 </Project>
