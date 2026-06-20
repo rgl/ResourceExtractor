@@ -10,6 +10,6 @@
     <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Vestris.ResourceLib" Version="2.1.0" />
+    <PackageReference Include="Vestris.ResourceLib" Version="2.2.0" />
   </ItemGroup>
 </Project>
