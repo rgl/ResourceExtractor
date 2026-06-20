@@ -1,0 +1,41 @@
+name: Build
+on:
+  - push
+  - workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v7
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: '10.0.x'
+      - name: Install dependencies
+        shell: pwsh
+        run: ./build.ps1 dependencies
+      - name: Build
+        shell: pwsh
+        run: ./build.ps1 build
+      - name: Upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: ResourceExtractor
+          path: ResourceExtractor.zip
+  release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    name: Release
+    runs-on: ubuntu-24.04
+    needs:
+      - build
+    permissions:
+      contents: write
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v8
+      - name: Release
+        uses: ncipollo/release-action@v1
+        with:
+          prerelease: ${{ contains(github.ref_name, '-') }}
+          artifacts: '*.zip'
+          token: ${{ secrets.GITHUB_TOKEN }}

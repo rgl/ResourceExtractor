@@ -1,5 +1,10 @@
-﻿This lists and extract the resources embedded inside an executable file (`.exe`, `.dll`, etc.).
+﻿# About
 
+[![build](https://github.com/rgl/ResourceExtractor/actions/workflows/build.yml/badge.svg)](https://github.com/rgl/ResourceExtractor/actions/workflows/build.yml)
+
+This lists and extract the resources embedded inside an executable file (`.exe`, `.dll`, etc.).
+
+## Usage
 
 To list the resources use, e.g.:
 

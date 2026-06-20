@@ -7,7 +7,7 @@
     <Company>ruilopes.com</Company>
     <Product>ResourceExtractor</Product>
     <Copyright>Copyright © ruilopes.com 2018</Copyright>
-    <Version>1.0.1</Version>
+    <Version>0.0.0-dev</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Vestris.ResourceLib" Version="2.2.0" />
